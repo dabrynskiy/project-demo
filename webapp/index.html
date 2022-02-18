@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Демо приложение UI5</title>
+    <!--id="sap-ui-bootstrap" начальная загрузка-->
+    <!--src откуда зугружать скрипт, для продуктива должен быть путь к скрипту на сервере-->
+    <!--data-sap-ui-theme какая тема по умолчанию-->
+    <!--data-sap-ui-libs библиотека пользовательского интерфейса-->
+    <!--data-sap-ui-compatVersion версия совместимости-->
+    <!--data-sap-ui-async процесс загрузки асинхронный.
+        Это означает, что ресурсы SAPUI5 могут быть загружены одновременно в фоновом режиме 
+        из соображений производительности.-->
+    <!--data-sap-ui-onInit модуль, который будет загружен первоначально, ссылка на файлик проекта по сути-->
+    <!--data-sap-ui-resourceroots Мы сообщаем ядру SAPUI5, что ресурсы в пространстве имен sap.ui.demo.demo_project
+         находятся в той же папке, что и index.html. 
+         Это, например, необходимо для приложений, которые запускаются на панели запуска SAP Fiori. -->
+    <script
+    id="sap-ui-bootstrap"
+    src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+    data-sap-ui-theme="sap_belize"
+    data-sap-ui-libs="sap.m"
+    data-sap-ui-compatVersion="edge"
+    data-sap-ui-async="true"
+    data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
+    data-sap-ui-resourceroots='{
+        "sap.ui.demo.demo_project": "./"
+    }'>
+    </script>
+</head>
+<!--Класс sapUiBody добавляет дополнительные стили, зависящие от темы, для отображения приложений SAPUI5-->
+<body class="sapUiBody" id="content">
+    <div data-sap-ui-component data-name="sap.ui.demo.demo_project" 
+         data-id="container" 
+         data-settings='{
+             "id" : "demo_project"
+            }'>
+    </div>
+</body>
+</html>

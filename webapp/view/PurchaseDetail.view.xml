@@ -1,0 +1,13 @@
+<mvc:View
+    controllerName="sap.ui.demo.demo_project.controller.PurchaseDetail"
+    xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+    <Page
+		title="{purchase>ObjectId}"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+		<ObjectHeader
+            intro="{purchase>Status}"
+			title="{purchase>Description}"/>
+	</Page>
+</mvc:View>

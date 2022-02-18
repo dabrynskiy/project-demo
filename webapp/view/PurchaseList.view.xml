@@ -1,0 +1,100 @@
+<mvc:View
+    controllerName="sap.ui.demo.demo_project.controller.PurchaseList"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic">
+    <semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false">
+        <semantic:titleHeading>
+			<Title text="Поиск закупочных процедур" />
+		</semantic:titleHeading>
+        <semantic:headerContent>
+        <IconTabBar
+				id="iconTabBar"
+				select=".onQuickFilter"
+				expandable="false">
+                <items>
+                    <IconTabFilter
+						key="all"
+						showAll="true"
+						count="{texts>/all}"
+						text="Все"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="current"
+						icon="sap-icon://future"
+						iconColor="Positive"
+						count="{texts>/current}"
+						text="Текущие"/>
+					<IconTabFilter
+						key="finished"
+						icon="sap-icon://stop"
+						iconColor="Critical"
+						count="{texts>/finished}"
+						text="Завершено"/>
+					<!--<IconTabFilter
+						key="my"
+						icon="sap-icon://supplier"
+						iconColor="Positive"
+						count="2"
+						text="Мои"/>-->
+                </items>
+                <content>
+                    <Table 
+                        id="purchase_m_Table"
+                        class="sapUiResponsiveMargin"
+                        width="auto"
+                        items="{
+                            path: 'purchase>/Purchases'
+                        }"
+                        noDataText="По заданным критериям процедуры закупки не найдены"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        updateFinished=".onUpdateFinished">
+                        <headerToolbar>
+                            <Toolbar>
+                                <Title text="{texts>/tableTitle}"/>
+                                <ToolbarSpacer/>
+                                <SearchField 
+                                    width="50%" 
+                                    search=".onFilterPurchases"
+                                    tooltip="Поиск по краткому описанию"/>
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column id="purhasenumber"
+                                    width='200px'>
+                                <Text text="№ процедуры" />
+                            </Column>
+                            <Column id="contact">
+                                <Text text="Контактное лицо" />
+                            </Column>
+                            <Column id="status">
+                                <Text text="Статус" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle"
+                                type="Navigation"
+                                press="onPress">
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{purchase>ObjectId}"
+                                        text="{purchase>Description}"/>
+                                    <ObjectIdentifier
+                                        title="{purchase>ContactName}"
+                                        text="{purchase>ContactMail}"/>
+                                    <Text 
+                                        text="{purchase>Status}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </IconTabBar>
+        </semantic:headerContent>
+    </semantic:SemanticPage>
+</mvc:View>

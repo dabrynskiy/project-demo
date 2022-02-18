@@ -1,0 +1,37 @@
+[
+    {
+        "ObjectId": "20220101/1",
+        "Description": "Закупка поддонов",
+        "Status": "Опубликовано",
+        "ContactName": "Иванов Иван Иванович",
+        "ContactMail": "ivanov@mail.ru"
+    },
+    {
+        "ObjectId": "20220102/2",
+        "Description": "Юридические услуги",
+        "Status": "Завершено",
+        "ContactName": "Петров Петр Петрович",
+        "ContactMail": "petrov@mail.ru"
+    },
+    {
+        "ObjectId": "20220103/3",
+        "Description": "Услуги по перевозке грузов",
+        "Status": "Опубликовано",
+        "ContactName": "Петров Петр Петрович",
+        "ContactMail": "petrov@mail.ru"
+    },
+    {
+        "ObjectId": "20220105/5",
+        "Description": "Новогодние подарки",
+        "Status": "Завершено",
+        "ContactName": "Петров Петр Петрович",
+        "ContactMail": "petrov@mail.ru"
+    },
+    {
+        "ObjectId": "20220106/6",
+        "Description": "Канцелярские товары",
+        "Status": "Опубликовано",
+        "ContactName": "Петров Петр Петрович",
+        "ContactMail": "petrov@mail.ru"
+    }
+  ]
